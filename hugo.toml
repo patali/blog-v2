@@ -1,65 +1,24 @@
-baseurl = "https://example.com/"
+baseurl = "https://patali.dev/"
 title = "patali.dev"
-theme = "console-demo"
+theme = "hugo-theme-console"
 languageCode = "en-us"
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
-pygmentsCodefences  = true
-pygmentsUseClasses  = true
-
-[frontmatter]
-  date = ["date", "publishDate", "lastmod"]
-  lastmod = ["lastmod", ":git", "date", "publishDate"]
-  publishDate = ["publishDate", "date"]
-  expiryDate = ["expiryDate"]
-
-[taxonomies]
-  tag = "tags"
-
-[params.author]
-  name = "Sharath"
-  about = "Perpetual student"
 
 [params]
-  themeColor = "#494f5c"
-  accentColor = "#018472"
+  # Cutting off the page title to two chars for mobile (console-demo -> co)
   titleCutting = true
-  justifyContent = false
-  relatedPosts = true
-  code_copy_button = true
-  homeSubtitlePrinter = true
-  scrollToTop = true 
-  global_mathjax = false
-  readTime = true
-  shareSocial = true
+
+  # Set the animation style -- https://animate.style/
+  # To disable animations, please remove or comment animationStyle parameter
   animateStyle = "animated zoomIn fast" 
 
-  [params.gallery]
-    enable = true
-    thumbnail = '300'
+  [[params.navlinks]]
+  name = "about/"
+  url = "about/"
 
-  [params.datefom]
-    LongDate = "Jan 2, 2006"
-    ShortDate = "Jan 2"
-    NumDateShort = "2006-01-02"
-    NumDateLong = "2006-01-02 15:04 -0700"
-
-  [[params.socialLinks]]
-    name = "x"
-    url = "https://x.com/sharathpatali"
-
-  [[params.socialLinks]]
-    name = "github"
-    url = "https://github.com/patali"
-
-[menu]
-
-  [[menu.main]]
-    name = "Posts"
-    url = "posts/"
-    weight = 10
-
-  [[menu.main]]
-    name = "About"
-    url = "about-hugo/"
-    weight = 20
+  [[params.navlinks]]
+  name = "posts/"
+  url = "posts/"
+  
+  [[params.navlinks]]
+  name = "photos/"
+  url = "photos/"
