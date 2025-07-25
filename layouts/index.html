@@ -2,14 +2,15 @@
 
 {{ $chotu := resources.Get "chotu.png" }}
 {{ $chotuSmile := resources.Get "chotu_smile.png" }}
-<img
-  src="{{ $chotu.RelPermalink }}"
-  data-smile="{{ $chotuSmile.RelPermalink }}"
-  data-normal="{{ $chotu.RelPermalink }}"
-  alt="@chotu"
+<div
   class="chotu-img"
   id="chotuImg"
-/>
+  data-normal="{{ $chotu.RelPermalink }}"
+  data-smile="{{ $chotuSmile.RelPermalink }}"
+  role="img"
+  aria-label="@chotu"
+  tabindex="0"
+></div>
 
 <p style="font-size: 1.25rem; font-weight: bold;">Notes from a perpetual student</p>
 
@@ -48,9 +49,16 @@
   .chotu-img {
     display: block;
     height: 200px;
-    width: auto;
+    width: 200px;
+    background-image: url('{{ $chotu.RelPermalink }}');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     filter: brightness(0) invert(0);
-    transition: filter 0.3s;
+    transition: filter 0.3s, background-image 0.1s;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    user-select: none;
   }
   body.dark .chotu-img,
   html[data-theme='dark'] .chotu-img {
@@ -76,17 +84,17 @@
   if (chotuImg) {
     // Mouse hover
     chotuImg.addEventListener('mouseenter', function() {
-      chotuImg.src = chotuImg.dataset.smile;
+      chotuImg.style.backgroundImage = `url('${chotuImg.dataset.smile}')`;
     });
     chotuImg.addEventListener('mouseleave', function() {
-      chotuImg.src = chotuImg.dataset.normal;
+      chotuImg.style.backgroundImage = `url('${chotuImg.dataset.normal}')`;
     });
     // Touch/tap
     chotuImg.addEventListener('touchstart', function() {
-      chotuImg.src = chotuImg.dataset.smile;
+      chotuImg.style.backgroundImage = `url('${chotuImg.dataset.smile}')`;
     });
     chotuImg.addEventListener('touchend', function() {
-      chotuImg.src = chotuImg.dataset.normal;
+      chotuImg.style.backgroundImage = `url('${chotuImg.dataset.normal}')`;
     });
   }
 </script>
