@@ -13,7 +13,8 @@ I'm a perpetual student in the world of computer science and engineering. I love
   \
   \
 **Contact Information**
-- email: sharath.patali@gmail.com  
-- <span class="material-symbols-outlined">twitter</span>: [@sharathpatali](https://twitter.com/sharathpatali)  
+- email: sharath@patali.dev  
+- twitter: [@sharathpatali](https://twitter.com/sharathpatali)  
 - github: [@patali](https://github.com/patali)  
+- linkedin: [sharathpatali](https://www.linkedin.com/in/sharathpatali/)
 - rss: [rss.xml](https://patali.dev/index.xml)

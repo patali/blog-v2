@@ -2,6 +2,9 @@
 
 {{ $chotu := resources.Get "chotu.png" }}
 {{ $chotuSmile := resources.Get "chotu_smile.png" }}
+
+<p class="title">Notes from a perpetual student</p>
+
 <div
   class="chotu-img"
   id="chotuImg"
@@ -12,7 +15,7 @@
   tabindex="0"
 ></div>
 
-<p style="font-size: 1.25rem; font-weight: bold;">Notes from a perpetual student</p>
+<p class="intro">Hi, Welcome to my blog. I’m <a href="/about">Sharath Patali</a>, a lifelong tech enthusiast, builder and creative tinkerer across code, hardware, and art.</p>
 
 <h1>Latest posts</h1>
 <div class="posts-list">
@@ -50,7 +53,7 @@
     display: block;
     width: 300px;
     height: 210px;
-    margin: 0 auto 0 0;
+    margin: 0 auto 0 auto;
     background-image: url('{{ $chotu.RelPermalink }}');
     background-size: contain;
     background-repeat: no-repeat;
@@ -78,6 +81,17 @@
     .chotu-img {
       filter: brightness(0) invert(0);
     }
+  }
+  .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .intro {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto 0 auto;
   }
 </style>
 <script>
