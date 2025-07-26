@@ -17,6 +17,8 @@
 
 <p class="intro">Hi, Welcome to my blog. I’m <a href="/about">Sharath Patali</a>, a lifelong tech enthusiast, builder and creative tinkerer across code, hardware, and art.</p>
 
+<hr class="hr-line">
+
 <h1>Latest posts</h1>
 <div class="posts-list">
 {{ with .Site.GetPage "/posts" }}
@@ -91,7 +93,10 @@
   .intro {
     text-align: center;
     width: 70%;
-    margin: 0 auto 0 auto;
+    margin: 0 auto 1rem auto;
+  }
+  .hr-line {
+    margin: 1.75rem 0rem 0.25rem 0rem;
   }
 </style>
 <script>
