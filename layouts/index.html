@@ -1,21 +1,8 @@
 {{ define "main" }}
 
-{{ $chotu := resources.Get "chotu.png" }}
-{{ $chotuSmile := resources.Get "chotu_smile.png" }}
-
 <p class="title">Notes from a perpetual student</p>
 
-<div
-  class="chotu-img"
-  id="chotuImg"
-  data-normal="{{ $chotu.RelPermalink }}"
-  data-smile="{{ $chotuSmile.RelPermalink }}"
-  role="img"
-  aria-label="@chotu"
-  tabindex="0"
-></div>
-
-<p class="intro">Hi, Welcome to my blog. I’m <a href="/about">Sharath Patali</a>, a lifelong tech enthusiast, builder and creative tinkerer across code, hardware, and art.</p>
+<p class="intro">Hi, Welcome to my blog. I'm <a href="/about">Sharath Patali</a>, a lifelong tech enthusiast, builder and creative tinkerer across code, hardware, and art.</p>
 
 <hr class="hr-line">
 
@@ -51,71 +38,19 @@
 </div>
 
 <style>
-  .chotu-img {
-    display: block;
-    width: 300px;
-    height: 210px;
-    margin: 0 auto 0 auto;
-    background-image: url('{{ $chotu.RelPermalink }}');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: brightness(0) invert(0);
-    transition: filter 0.3s, background-image 0.1s;
-    -webkit-user-drag: none;
-    -webkit-touch-callout: none;
-    user-select: none;
-  }
-  body.dark .chotu-img,
-  html[data-theme='dark'] .chotu-img {
-    filter: brightness(0) invert(1);
-  }
-  body.light .chotu-img,
-  html[data-theme='light'] .chotu-img {
-    filter: brightness(0) invert(0);
-  }
-  @media (prefers-color-scheme: dark) {
-    .chotu-img {
-      filter: brightness(0) invert(1);
-    }
-  }
-  @media (prefers-color-scheme: light) {
-    .chotu-img {
-      filter: brightness(0) invert(0);
-    }
-  }
   .title {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    text-align: center;
+    text-align: left;
   }
   .intro {
-    text-align: center;
-    width: 70%;
-    margin: 0 auto 1rem auto;
+    text-align: left;
+    width: 100%;
+    margin: 0 0 1rem 0;
   }
   .hr-line {
     margin: 1.75rem 0rem 0.25rem 0rem;
   }
 </style>
-<script>
-  const chotuImg = document.getElementById('chotuImg');
-  if (chotuImg) {
-    // Mouse hover
-    chotuImg.addEventListener('mouseenter', function() {
-      chotuImg.style.backgroundImage = `url('${chotuImg.dataset.smile}')`;
-    });
-    chotuImg.addEventListener('mouseleave', function() {
-      chotuImg.style.backgroundImage = `url('${chotuImg.dataset.normal}')`;
-    });
-    // Touch/tap
-    chotuImg.addEventListener('touchstart', function() {
-      chotuImg.style.backgroundImage = `url('${chotuImg.dataset.smile}')`;
-    });
-    chotuImg.addEventListener('touchend', function() {
-      chotuImg.style.backgroundImage = `url('${chotuImg.dataset.normal}')`;
-    });
-  }
-</script>
 {{ end }}
